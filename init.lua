@@ -130,6 +130,7 @@ vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
+vim.opt.colorcolumn = '80'
 
 -- Decrease update time
 vim.opt.updatetime = 250
@@ -382,11 +383,11 @@ require('lazy').setup({
             'node_modules',
             '.git',
           },
+          require('telescope').load_extension 'file_browser',
         },
       }
       -- To get telescope-file-browser loaded and working with telescope,
       -- you need to call load_extension, somewhere after setup function:
-      require('telescope').load_extension 'file_browser'
       vim.keymap.set('n', '<leader>f', ':Telescope file_browser<cr>', { noremap = true, desc = 'File Browser' })
 
       -- Enable Telescope extensions if they are installed
